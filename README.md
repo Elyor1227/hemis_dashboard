@@ -18,6 +18,18 @@ npm install
 npm run dev
 ```
 
+> **Muhim:** `node_modules` va `dist` papkalarini GitHubga yuklamang. Ular `.gitignore` da. Vercel deploy uchun faqat manba kod push qilinadi.
+
+## Vercel deploy
+
+```bash
+# Bir marta: repodan node_modules va dist ni olib tashlash
+git rm -r --cached node_modules dist tsconfig.tsbuildinfo 2>nul
+git add .gitignore
+git commit -m "Remove node_modules from repo; fix Vercel build"
+git push
+```
+
 Brauzerda: `http://localhost:5173`
 
 ## Texnologiyalar
